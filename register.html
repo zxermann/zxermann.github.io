@@ -110,15 +110,15 @@
 					</div> -->
               <div class="form-group">
                 <label for="email">Age</label>
-                <input type="text" class="form-control" id="Age" name="Age" placeholder="eg. 18">
+                <input type="text" class="form-control" id="age" name="age" placeholder="eg. 18">
               </div>
               <div class="form-group">
                 <label for="amount">Mobile Number</label>
-                <input type="text" class="form-control" id="Mobile" name="Mobile" placeholder="eg. 07000011100">
+                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="eg. 07000011100">
               </div>
 			  <div class="form-group">
                 <label for="amount">WhatsApp Number</label>
-                <input type="text" class="form-control" id="WhatsApp" name="WhatsApp" placeholder="eg. +2347000011100">
+                <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="eg. +2347000011100">
               </div>
 			  <div class="form-group">
                 <label for="email">Email</label>
@@ -126,21 +126,21 @@
               </div>
 			  <div class="form-group">
                 <label for="amount">Occupation</label>
-                <input type="text" class="form-control" id="Occupation" name="Occupation" placeholder="eg. Student">
+                <input type="text" class="form-control" id="occup" name="occup" placeholder="eg. Student">
               </div>
 			 
               <div class="form-group">
                 <label for="message">Hobbies and Interests</label>
-                <textarea cols="30" rows="10" class="form-control" id="Hobbies" name="Hobbies" placeholder="State your hobbies, separated by comma."></textarea>
+                <textarea cols="30" rows="10" class="form-control" id="hobb" name="hobb" placeholder="State your hobbies, separated by comma."></textarea>
               </div>
 			  <div class="form-group">
                 <label for="message">Statistics</label>
-                <textarea cols="30" rows="10" class="form-control" id="Statistics" name="Statistics" placeholder="State Height, etc"></textarea>
+                <textarea cols="30" rows="10" class="form-control" id="sta" name="sta" placeholder="State Height, etc"></textarea>
               </div>
 			  
 <div class="form-group">
                 <label for="message">Tell us a bit about your background</label>
-                <textarea cols="30" rows="10" class="form-control" i	d="Statistics" name="background" placeholder="Tell us a bit about your background"></textarea>
+                <textarea cols="30" rows="10" class="form-control" id="back" name="back" placeholder="Tell us a bit about your background"></textarea>
               </div>
 			  Have you participated in any pageant before?
 			  <div class="form-wrapper">
@@ -176,7 +176,7 @@
                 <textarea cols="30" rows="10" class="form-control" id="wish" name="wish" placeholder=""></textarea>
               </div>
               <div class="form-group">
-                <button class="btn btn-primary btn-lg" style="background-color:#C48F27; color:#440077"; ahref="https://eminentmagazine.com/votecomplete" onClick="insertvote();">Submit
+                <button class="btn btn-primary btn-lg" style="background-color:#C48F27; color:#440077"; ahref="success.html" onClick="insertdata();">Submit
 					</button>
               </div>
             </form>
@@ -209,13 +209,10 @@
                 <h3>About Us</h3>
                 <p>As a registered pageant company, the Miss Universe Anambra Organisation aspires to stand out uniquely and be one of the best pageant brands...</p>
 								       <p><a href="about.html" class="btn btn-primary btn-lg">Read More</a></p>
-                <ul class="probootstrap-footer-social">
-                  <li><a href="#"><i class="icon-twitter"></i></a></li>
-                  <li><a href="#"><i class="icon-facebook"></i></a></li>
-                  <li><a href="#"><i class="icon-github"></i></a></li>
-                  <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                  <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                  <li><a href="#"><i class="icon-youtube"></i></a></li>
+               <ul class="probootstrap-footer-social">
+                  <li><a href="https://www.facebook.com/missuniverseanambra/"><i class="icon-facebook"></i></a></li>
+                  <li><a href="https://www.instagram.com/missuniverseanambra/"><i class="icon-instagram"></i></a></li>
+              
                 </ul>
               </div>
             </div>
@@ -224,7 +221,7 @@
               <div class="probootstrap-footer-widget">
                 <h3>Contact Info</h3>
                 <ul class="probootstrap-contact-info"> 
-                  <li><i class="icon-mail"></i><span>info@missuniverseanabra.com</span></li>
+                  <li><i class="icon-mail"></i><span>info@missuniverseanambra.com</span></li>
                   <li><i class="icon-phone2"></i><span>+234 808 888 7858</span></li>
                 </ul>
                 
@@ -260,7 +257,22 @@
           </div>
         </div>
       </footer>
+<script type="text/javascript">
+function insertdata()
+{
+   var link = 'mailto:zxermann@gmail.com?subject=NEW Registration for '
+             +document.getElementById('name').value
+             +'&body='+document.getElementById('age').value;
+    window.location.href = link;
+ console.log(list);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", "insert.php?fname="+document.getElementById("name").value+"&age="+document.getElementById("age").value+"&mobile="+document.getElementById("mobile").value+"&whatsapp="+document.getElementById("whatsapp").value+"&email="+document.getElementById("email").value+"&occup="+document.getElementById("occup").value+"&hobb="+document.getElementById("hobb").value+"&sta="+document.getElementById("sta").value+"&back="+document.getElementById("back").value+"&list="+document.getElementById("list").value+"&how="+document.getElementById("how").value+"&why="+document.getElementById("why").value+"&what="+document.getElementById("what").value+"&goals="+document.getElementById("goals").value+"&wish="+document.getElementById("wish").value, false);
+console.log(list.value);
+xmlhttp.send(null);
 
+window.location.replace = "success.html";
+}
+</script>
     <script src="js/scripts.min.js"></script>
     <script src="js/main.min.js"></script>
     <script src="js/custom.js"></script>
